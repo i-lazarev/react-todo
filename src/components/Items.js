@@ -1,13 +1,28 @@
 import React from "react";
+import "../styles/Item.scss";
 
 export default function Items(props) {
   return (
-    <>
-      <ul>
-        {props.items.map((item,id )=> (
-          <li key={id}> {item}</li>
-        ))}
-      </ul>
-    </>
+    <div className="list-group mb-4">
+      {props.items.map(item => (
+        <div
+          className="list-group-item d-flex justify-content-between align-item-center "
+          key={item.id}
+        >
+          <div> {item.text} </div>
+          <div>
+            <span
+            onClick={ () => props.onStatus(item.id)}
+              className={
+                "badge badge-pill ml-4 " +
+                (item.status ? "badge-success" : "badge-warning")
+              }
+            >
+              {item.status ? "Done" : "To do"}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }
