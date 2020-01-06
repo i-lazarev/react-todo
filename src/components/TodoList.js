@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Item from './Item'
+import Items from './Items'
 
-export default class Todo extends Component {
+export default class TodoList extends Component {
     constructor(){
         super()
         this.state={
@@ -33,7 +33,7 @@ export default class Todo extends Component {
             <div>
                 <h3>Todo List</h3>
                 <p>A list of things</p>
-                <Item items={this.state.items} />
+                <Items items={this.state.items} />
                 <form onSubmit={this.handleSubmit}>
                     <input 
                     onChange={this.handleChange} 
@@ -41,7 +41,7 @@ export default class Todo extends Component {
                     id="todo-item" 
                     value={this.state.newItem}>
                     </input>
-                    <button>Add</button>
+                    <button className= 'btn btn-primary'>Add</button>
                 </form>
             </div>
         )

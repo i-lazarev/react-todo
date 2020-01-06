@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Item(props) {
+export default function Items(props) {
   return (
     <>
       <ul>
