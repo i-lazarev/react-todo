@@ -39,6 +39,13 @@ export default class TodoList extends Component {
       this.setState({items})
   }
 
+  handleDelete = (id) =>{
+    const items = this.state.items.filter(
+       item => item.id !== id 
+    )
+    this.setState({items})
+  }
+
   handleSubmit = event => {
     event.preventDefault();
     const newItem = {
@@ -62,6 +69,7 @@ export default class TodoList extends Component {
       <div>
         <Items 
         onStatus={this.handleStatus} 
+        onDelete = {this.handleDelete}
         items={this.state.items} 
         />
         <Counter items={this.state.items} />

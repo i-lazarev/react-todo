@@ -9,7 +9,7 @@ export default function Items(props) {
           className="list-group-item d-flex justify-content-between align-item-center "
           key={item.id}
         >
-          <div> {item.text} </div>
+          <div className={item.status ? "strike" : "todo-item-text"}> {item.text} </div>
           <div>
             <span
             onClick={ () => props.onStatus(item.id)}
@@ -20,6 +20,9 @@ export default function Items(props) {
             >
               {item.status ? "Done" : "To do"}
             </span>
+            <span 
+            onClick={() => props.onDelete(item.id)}
+            className="close ml-2">&times;</span>
           </div>
         </div>
       ))}
