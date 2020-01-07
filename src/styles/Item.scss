@@ -14,3 +14,13 @@ span{
     text-decoration: line-through;
 }
 
+.done{
+    background-color: green;
+    padding: 4px;
+    border-radius: 2px;
+}
+.undone {
+    background-color: red;
+    padding: 4px;
+    border-radius: 2px;
+}

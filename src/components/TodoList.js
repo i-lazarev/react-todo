@@ -49,7 +49,7 @@ export default class TodoList extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const newItem = {
-      id: Date.now(), //timpstamp
+      id: Date.now(), //time stamp
       text: this.state.newItem.trim(),
       status: false
     };
